@@ -30,7 +30,7 @@ jobs:
       run: flutter config --enable-windows-desktop
       
     - name: Install Rust
-      uses: dtolnay/rust-action@stable
+      uses: dtolnay/rust-toolchain@stable
       
     - name: Install dependencies
       run: |
@@ -52,7 +52,7 @@ jobs:
         7z a -tzip rustdesk-windows.zip Runner/
         
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: rustdesk-windows-exe
         path: flutter/build/windows/x64/Release/rustdesk-windows.zip
